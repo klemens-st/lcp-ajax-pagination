@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "author": "Klemens Starybrat",
   "license": "GPL-3.0",
-  "homepage": "TODO: repo site",
+  "homepage": "https://github.com/klemens-st/lcp-ajax",
   "private": true,
   "sideEffects": [
     "**/*.css",
