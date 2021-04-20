@@ -20,6 +20,7 @@ $( document ).ready( function() {
 			}
 		} );
 
+		// TODO: failure handler.
 		$.get( url, ( data ) => {
 			const $data = $( data );
 
@@ -72,6 +73,7 @@ $( document ).ready( function() {
 			}
 		} );
 
+		// TODO: failure handler.
 		$.get( url, ( data ) => {
 			const $data = $( data );
 

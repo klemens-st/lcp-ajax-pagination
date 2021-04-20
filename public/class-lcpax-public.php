@@ -1,11 +1,13 @@
 <?php
-
 /**
- * The public-facing functionality of the plugin.
+ * LCP Ajax Pagination: Lcpax_Public class.
  *
- * @since      0.1.0
+ * This file defines the Lcpax_Public class.
  *
- * @package    Lcp_Ajax\public
+ * @author     Klemens Starybrat
+ *
+ * @package Lcp_Ajax\includes
+ * @since 0.1.0
  */
 
 /**
@@ -36,19 +38,33 @@ class Lcpax_Public {
    */
   private $version;
 
+  /**
+   * Stores information about LCP instances with ajax enabled.
+   *
+   * @since     0.1.0
+   * @access    private
+   * @var array An associative array in the format $instance => $ajax_mode.
+   */
   private $lcp_instances = [];
 
+  /**
+   * Shortcode parameters that this plugin adds to LCP.
+   *
+   * @since     0.1.0
+   * @access    private
+   * @var array Shortcode parameters with default values.
+   */
   private $shortcode_params = [
     'ajax_pagination' => '',
     'ajax_loadmore'   => '',
   ];
 
   /**
-   * Initialize the class and set its properties.
+   * Initializes the class and sets its properties.
    *
    * @since    0.1.0
-   * @param      string    $plugin_name       The name of the plugin.
-   * @param      string    $version    The version of this plugin.
+   * @param      string    $plugin_name  The name of the plugin.
+   * @param      string    $version      The version of this plugin.
    */
   public function __construct( $plugin_name, $version ) {
 
@@ -58,13 +74,13 @@ class Lcpax_Public {
   }
 
   /**
-   * Register the stylesheets for the public-facing side of the site.
+   * Registers the stylesheets for the public-facing side of the site.
    *
    * @since    0.1.0
    */
   public function enqueue_styles() {
 
-    wp_enqueue_style(
+    wp_register_style(
       $this->plugin_name,
       plugin_dir_url( __FILE__ ) . 'dist/main.min.css',
       array(), $this->version,
@@ -74,7 +90,7 @@ class Lcpax_Public {
   }
 
   /**
-   * Register the JavaScript for the public-facing side of the site.
+   * Registers the JavaScript for the public-facing side of the site.
    *
    * @since    0.1.0
    */
@@ -89,7 +105,7 @@ class Lcpax_Public {
   }
 
   /**
-   * Parse this plugin's shortcode parameters that are present
+   * Parses this plugin's shortcode parameters that are present
    * in the LCP shortcode.
    *
    * This is a callback to the 'shortcode_atts_catlist' filter hook.
@@ -107,12 +123,15 @@ class Lcpax_Public {
       return $out;
     }
 
-    // Make sure pagination is set properly, for user convenience.
-    // Adding pagination=yes to shortcodes is not required.
+    /*
+     * Make sure pagination is set properly, for user convenience.
+     * Adding pagination=yes to shortcodes is not required.
+     */
     $out[ 'pagination' ] = 'yes';
 
-    // Enqueue JS.
+    // Enqueue JS and CSS.
     wp_enqueue_script( $this->plugin_name );
+    wp_enqueue_style( $this->plugin_name );
 
     // Load more feature.
     if ( isset( $atts[ 'ajax_loadmore' ] ) && 'yes' === $atts[ 'ajax_loadmore' ] ) {
@@ -121,20 +140,38 @@ class Lcpax_Public {
         $out[ 'pagination_next' ] = 'Load more';
       }
 
+      // Assign the loadmore mode to this instance and store this information.
       $this->lcp_instances[ $out[ 'instance' ] ] = 'loadmore';
     }
 
     // Ajax pagination feature.
     if ( isset( $atts[ 'ajax_pagination' ] ) && 'yes' === $atts[ 'ajax_pagination' ] ) {
+      // Assign the ajax_pagination mode to this instance and store this information.
       $this->lcp_instances[ $out[ 'instance' ] ] = 'pagination';
     }
 
     return $out;
   }
 
-  // We have to tell JS what behaviour (loadmore, ajax pagination, infinite scroll)
-  // should be applied on which LCP instance.
+  /**
+   * Manipulates output HTML of LCP pagination.
+   *
+   * We have to tell JS what behaviour (loadmore, ajax pagination)
+   * should be applied to which LCP instance. This is done by changing
+   * and/or adding classes to the pagination wrapper (lcp_paginator).
+   *
+   * This is a callback to the 'lcp_pagination_html' filter hook.
+   *
+   * @since    0.1.0
+   * @see   LcpPaginator
+   *
+   * @param  string $pag_output  LCP pagination HTML.
+   * @param  array  $params      Pagination params passed to the LcpPaginator class.
+   * @param  int    $pages_count Total number of pages.
+   * @return string              Maybe modified $pag_output.
+   */
   public function modify_lcp_pagination( $pag_output, $params, $pages_count ) {
+    // Check if this instance has ajax options enabled.
     if ( isset( $this->lcp_instances[ $params[ 'instance' ] ] ) ) {
       if ( 'loadmore' === $this->lcp_instances[ $params[ 'instance' ] ] ) {
         // Change class to apply this plugin's CSS and ignore LCP styles.

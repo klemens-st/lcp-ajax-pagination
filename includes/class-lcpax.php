@@ -50,10 +50,10 @@ class Lcpax {
   protected $version;
 
   /**
-   * Define the core functionality of the plugin.
+   * Defines the core functionality of the plugin.
    *
-   * Set the plugin name and the plugin version that can be used throughout the plugin.
-   * Load the dependencies, define the locale, and set the hooks for the admin area and
+   * Sets the plugin name and the plugin version that can be used throughout the plugin.
+   * Loads the dependencies, defines the locale, and sets the hooks for the admin area and
    * the public-facing side of the site.
    *
    * @since    0.1.0
@@ -67,18 +67,18 @@ class Lcpax {
     $this->plugin_name = 'lcp-ajax';
 
     $this->load_dependencies();
-    $this->define_admin_hooks();
+    // $this->define_admin_hooks();
     $this->define_public_hooks();
 
   }
 
   /**
-   * Load the required dependencies for this plugin.
+   * Loads the required dependencies for this plugin.
    *
-   * Include the following files that make up the plugin:
+   * Included the following files that make up the plugin:
    *
    * - Lcpax_Loader. Orchestrates the hooks of the plugin.
-   * - Lcpax_Admin. Defines all hooks for the admin area.
+   * - Lcpax_Public. Defines all hooks for the public area.
    *
    * Create an instance of the loader which will be used to register the hooks
    * with WordPress.
@@ -110,7 +110,7 @@ class Lcpax {
   }
 
   /**
-   * Register all of the hooks related to the admin area functionality
+   * Registers all of the hooks related to the admin area functionality
    * of the plugin.
    *
    * @since    0.1.0
@@ -120,12 +120,10 @@ class Lcpax {
 
     // $plugin_admin = new Lcpax_Admin( $this->get_plugin_name(), $this->get_version() );
 
-    // $this->loader->add_action( 'wp_enqueue_media', $plugin_admin, 'enqueue_media' );
-    // $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
   }
 
   /**
-   * Register all of the hooks related to the public-facing functionality
+   * Registers all of the hooks related to the public-facing functionality
    * of the plugin.
    *
    * @since    0.1.0
@@ -146,7 +144,7 @@ class Lcpax {
   }
 
   /**
-   * Run the loader to execute all of the hooks with WordPress.
+   * Runs the loader to execute all of the hooks with WordPress.
    *
    * @since    0.1.0
    */
@@ -176,7 +174,7 @@ class Lcpax {
   }
 
   /**
-   * Retrieve the version number of the plugin.
+   * Retrieves the version number of the plugin.
    *
    * @since     0.1.0
    * @return    string    The version number of the plugin.

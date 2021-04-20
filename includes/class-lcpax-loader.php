@@ -11,10 +11,10 @@
  */
 
 /**
- * Register all actions and filters for the plugin.
+ * Registers all actions and filters for the plugin.
  *
- * Maintain a list of all hooks that are registered throughout
- * the plugin, and register them with the WordPress API. Call the
+ * Maintains a list of all hooks that are registered throughout
+ * the plugin, and registers them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
  * @since 0.1.0
@@ -52,7 +52,7 @@ class Lcpax_Loader {
   }
 
   /**
-   * Add a new action to the collection to be registered with WordPress.
+   * Adds a new action to the collection to be registered with WordPress.
    *
    * @since    0.1.0
    * @param    string $hook             The name of the WordPress action that is being registered.
@@ -66,7 +66,7 @@ class Lcpax_Loader {
   }
 
   /**
-   * Add a new filter to the collection to be registered with WordPress.
+   * Adds a new filter to the collection to be registered with WordPress.
    *
    * @since    0.1.0
    * @param    string $hook             The name of the WordPress filter that is being registered.
@@ -108,7 +108,7 @@ class Lcpax_Loader {
   }
 
   /**
-   * Register the filters and actions with WordPress.
+   * Registers the filters and actions with WordPress.
    *
    * @since    0.1.0
    */
