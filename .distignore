@@ -1,7 +1,10 @@
+.wordpress-org
 .babelrc
 .deployignore
 .distignore
 .editorconfig
+*.sublime-project
+*.sublime-workspace
 .eslintignore
 .eslintrc
 .git
@@ -30,7 +33,7 @@ phpcs.xml
 .phpcs.xml.dist
 phpcs.xml.dist
 README.md
-webpack.config.js
+webpack.*
 wp-cli.local.yml
 yarn.lock
 tests
