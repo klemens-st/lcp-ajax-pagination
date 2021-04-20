@@ -1,0 +1,19 @@
+{
+
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "ignorePatterns": ["node_modules/", "orig/", "dist/"],
+    "extends": [ "plugin:@wordpress/eslint-plugin/esnext" ],
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "globals": {
+        "jQuery": false,
+        "wp": false,
+        "_": false,
+        "lcpax_obj": false
+    }
+}
