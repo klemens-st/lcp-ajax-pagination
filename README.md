@@ -5,6 +5,8 @@ plugin. It extends LCP's pagination with the following features:
 * transform LCP pagination into ajax pagination,
 * transform LCP pagination into ajax 'load more'.
 
+**IMPORTANT**: Requires LCP v0.84.1 or greater.
+
 Usage: `[catlist ajax_pagination=yes]` or `[catlist ajax_loadmore=yes]`.
 
 This repository contains a development version of the plugin.
