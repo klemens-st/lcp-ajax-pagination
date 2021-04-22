@@ -8,14 +8,13 @@ $( document ).ready( function() {
 
 		const $this = $( this );
 		const url = $this.attr( 'href' );
-		const params = new URL( url ).searchParams;
 
 		let instance, instanceSelector;
 
-		// Get LCP instance selector.
-		params.forEach( ( value, key ) => {
-			if ( 'lcp_page' === key.substring( 0, 8 ) ) {
-				instance = key[ 8 ];
+		// Get LCP instance info from the class that was added in PHP.
+		e.delegateTarget.classList.forEach( ( cssClass ) => {
+			if ( cssClass.startsWith( 'lcpax-instance-' ) ) {
+				instance = cssClass.slice( 15 );
 				instanceSelector = `#lcp_instance_${ instance }`;
 			}
 		} );
@@ -43,6 +42,13 @@ $( document ).ready( function() {
 		const $wrapper = $( '<div class="lcpax-nextlink-wrapper"></div>' );
 		const $spinner = $paginator.find( '.lcpax-spinner' );
 
+		// Add the instance class to the wrapper.
+		this.classList.forEach( ( cssClass ) => {
+			if ( cssClass.startsWith( 'lcpax-instance-' ) ) {
+				$wrapper.addClass( cssClass );
+			}
+		} );
+
 		// Remove the title attr, should be removed from LCP anyway.
 		$nextlink.removeAttr( 'title' );
 
@@ -57,7 +63,6 @@ $( document ).ready( function() {
 
 		const $this = $( this );
 		const url = $this.attr( 'href' );
-		const params = new URL( url ).searchParams;
 		const $spinner = $( e.delegateTarget ).find( '.lcpax-spinner' );
 
 		let instance, instanceSelector;
@@ -65,10 +70,10 @@ $( document ).ready( function() {
 		// Show the spinner.
 		$spinner.css( 'display', 'inline' );
 
-		// Get LCP instance selector.
-		params.forEach( ( value, key ) => {
-			if ( 'lcp_page' === key.substring( 0, 8 ) ) {
-				instance = key[ 8 ];
+		// Get LCP instance info from the class that was added in PHP.
+		e.delegateTarget.classList.forEach( ( cssClass ) => {
+			if ( cssClass.startsWith( 'lcpax-instance-' ) ) {
+				instance = cssClass.slice( 15 );
 				instanceSelector = `#lcp_instance_${ instance }`;
 			}
 		} );
