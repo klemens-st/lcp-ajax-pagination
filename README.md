@@ -63,7 +63,7 @@ Automated tests have not been added yet. I am planning to add PHPCS and PHPUnit.
 
 ## Versioning
 
-I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/klemens-st/lcp-ax/tags).
+I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [releases on this repository](https://github.com/klemens-st/lcp-ajax-pagination/releases).
 
 ## License
 
