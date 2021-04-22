@@ -3,12 +3,12 @@
  * @package   Lcp_Ajax
  * @author    Klemens Starybrat
  * @license   GPL-3.0
- * @link      https://github.com/klemens-st/lcp-ajax
+ * @link      https://github.com/klemens-st/lcp-ajax-pagination
  * @copyright 2021 Klemens Starybrat
  *
  * @wordpress-plugin
  * Plugin Name:       LCP Ajax Pagination
- * Plugin URI:        https://github.com/klemens-st/lcp-ajax
+ * Plugin URI:        https://github.com/klemens-st/lcp-ajax-pagination
  * Description:       Ajax pagination add-on plugin for List Category Posts.
  * Version:           0.1.0
  * Author:            Klemens Starybrat

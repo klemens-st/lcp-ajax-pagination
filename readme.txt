@@ -65,7 +65,7 @@ as delivered by LCP, so it has the `lcp_nextlink` class.
 ==Development==
 
 LCP Ajax is open source software. You can find the
-development version of the plugin on [Github](https://github.com/klemens-st/lcp-ajax).
+development version of the plugin on [Github](https://github.com/klemens-st/lcp-ajax-pagination).
 
 All suggestions and contributions are welcome :) Fork it, read the respository's
 readme and start helping with the development!

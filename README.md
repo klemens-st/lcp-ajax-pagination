@@ -11,16 +11,16 @@ Usage: `[catlist ajax_pagination=yes]` or `[catlist ajax_loadmore=yes]`.
 
 This repository contains a development version of the plugin.
 If you just download this repository and add it to your WordPress installation it *won't work*.
-Production releases are available on the [plugin's page in WordPress.org plugin directory](https://wordpress.org/plugins/lcp-ajax).
+Production releases are available on the [plugin's page in WordPress.org plugin directory](https://wordpress.org/plugins/lcp-ajax-pagination).
 
 ## Documentation
-User documentation can be found on the [plugin's WordPress.org page](https://wordpress.org/plugins/lcp-ajax).
+User documentation can be found on the [plugin's WordPress.org page](https://wordpress.org/plugins/lcp-ajax-pagination).
 
 ## Support
 
-Please use the [WordPress support forum](https://wordpress.org/support/plugin/lcp-ajax/)
+Please use the [WordPress support forum](https://wordpress.org/support/plugin/lcp-ajax-pagination/)
 for **user support** and any **questions about how to use the plugin**.
-[Github issues](https://github.com/klemens-st/lcp-ajax/issues) should only be used for **bug reports**,
+[Github issues](https://github.com/klemens-st/lcp-ajax-pagination/issues) should only be used for **bug reports**,
 **feature requests** and other code-related topics.
 
 ## Getting Started
