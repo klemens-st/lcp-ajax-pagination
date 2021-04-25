@@ -5,7 +5,7 @@ Tags: ajax, ajax-pagination, list-category-posts
 Requires at least: 4.7
 Tested up to: 5.7.1
 Requires PHP: 5.6
-Stable tag: 0.1.1
+Stable tag: 0.1.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -85,7 +85,10 @@ Please note that this is an add-on plugin which requires [List Category Posts](h
 
 == Changelog ==
 
-=0.1.0 =
+= 0.1.2 =
+* Fixed load more link remaining active before previous fetch is finished.
+
+= 0.1.0 =
 * Initial release
 
 == Upgrade Notice ==
