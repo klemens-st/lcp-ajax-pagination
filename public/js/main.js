@@ -60,8 +60,16 @@ $( document ).ready( function() {
 
 	$( '.lcpax-nextlink-wrapper' ).on( 'click', '.lcp_nextlink', function( e ) {
 		e.preventDefault();
-
 		const $this = $( this );
+
+		// Check if nothing is already being loaded.
+		if ( true === $this.data( 'lcpax-loading' ) ) {
+			return;
+		}
+
+		// Flag the link so that it remains inactive until loading is finished.
+		$this.data( 'lcpax-loading', true );
+
 		const url = $this.attr( 'href' );
 		const $spinner = $( e.delegateTarget ).find( '.lcpax-spinner' );
 
@@ -99,6 +107,8 @@ $( document ).ready( function() {
 
 			// Hide the spinner.
 			$spinner.css( 'display', '' );
+			// Unflag the link.
+			$this.data( 'lcpax-loading', false );
 		} );
 	} );
 } );
