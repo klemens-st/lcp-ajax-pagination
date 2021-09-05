@@ -3,9 +3,9 @@ Contributors: zymeth25
 Donate link: https://www.paypal.com/donate?hosted_button_id=BX4TN5Z4MSX52&source=url
 Tags: ajax, ajax-pagination, list-category-posts
 Requires at least: 4.7
-Tested up to: 5.7.1
+Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 0.1.3
+Stable tag: 0.1.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -84,6 +84,9 @@ Please use the support forum for questions about **using** the plugin. Use Githu
 Please note that this is an add-on plugin which requires [List Category Posts](https://wordpress.org/plugins/list-category-posts/) to be installed and activated.
 
 == Changelog ==
+
+= 0.1.4 =
+* Updated dependencies.
 
 = 0.1.3 =
 * Updated dependencies.

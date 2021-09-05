@@ -10,7 +10,7 @@
  * Plugin Name:       LCP Ajax Pagination
  * Plugin URI:        https://github.com/klemens-st/lcp-ajax-pagination
  * Description:       Ajax pagination add-on plugin for List Category Posts.
- * Version:           0.1.3
+ * Version:           0.1.4
  * Author:            Klemens Starybrat
  * Author URI:        https://github.com/klemens-st
  * License:           GPL-3.0
@@ -39,7 +39,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Current plugin version.
  */
-define( 'LCP_AJAX_VERSION', '0.1.3' );
+define( 'LCP_AJAX_VERSION', '0.1.4' );
 
 /**
  * The core plugin class that is used to define plugin's hooks.
